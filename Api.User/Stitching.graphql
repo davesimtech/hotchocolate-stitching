@@ -1,0 +1,3 @@
+﻿extend type Query {
+  userAccount(id:Uuid!): UserAccount @delegate(path: "userAccount")
+}
