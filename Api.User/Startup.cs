@@ -34,7 +34,7 @@ namespace Api.User
                 .AddQueryType<QueryType>()
                 .InitializeOnStartup()
                 .PublishSchemaDefinition(c => c
-                    .SetName("courses")
+                    .SetName("users")
                     .IgnoreRootTypes()
                     .AddTypeExtensionsFromFile("./Stitching.graphql")
                     .PublishToRedis("ApiUser", sp => sp.GetRequiredService<ConnectionMultiplexer>()));

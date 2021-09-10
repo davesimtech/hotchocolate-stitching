@@ -5,10 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HotChocolate.AspNetCore" Version="12.0.0-preview.27" />
-    <PackageReference Include="HotChocolate.AspNetCore.Authorization" Version="12.0.0-preview.27" />
-    <PackageReference Include="HotChocolate.Stitching" Version="12.0.0-preview.27" />
-    <PackageReference Include="HotChocolate.Stitching.Redis" Version="12.0.0-preview.27" />
+    <PackageReference Include="HotChocolate.AspNetCore" Version="12.0.0-rc.6" />
+    <PackageReference Include="HotChocolate.AspNetCore.Authorization" Version="12.0.0-rc.6" />
+    <PackageReference Include="HotChocolate.Stitching" Version="12.0.0-rc.6" />
+    <PackageReference Include="HotChocolate.Stitching.Redis" Version="12.0.0-rc.6" />
   </ItemGroup>
 
 </Project>
