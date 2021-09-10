@@ -33,11 +33,11 @@ namespace Api.User
                 .AddApolloTracing(TracingPreference.Always)
                 .AddQueryType<QueryType>()
                 .InitializeOnStartup()
-                .PublishSchemaDefinition(c => c
-                    .SetName("courses")
-                    .IgnoreRootTypes()
+                .PublishSchemaDefinition(x =>
+                x.SetName("users")
+                .IgnoreRootTypes()
                     .AddTypeExtensionsFromFile("./Stitching.graphql")
-                    .PublishToRedis("ApiUser", sp => sp.GetRequiredService<ConnectionMultiplexer>()));
+                );
 
             services.AddRazorPages();
         }

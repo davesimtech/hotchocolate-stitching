@@ -37,8 +37,6 @@ namespace Api.Gateway
                 c.BaseAddress = new Uri($"{apiConfigOptions.User}/graphql");
             });
 
-            services.AddSingleton(ConnectionMultiplexer.Connect(_configuration.GetConnectionString("RemoteSchemaRedis")));
-
             services.AddCors(options =>
             {
                 options.AddPolicy(DefaultCorsPolicyName, builder =>
@@ -56,8 +54,8 @@ namespace Api.Gateway
                 .AddApolloTracing(TracingPreference.Always)
                 .AddQueryType(d => d.Name("Query"))
                 .AddMutationType(d => d.Name("Mutation"))
-                .InitializeOnStartup()
-                .AddRemoteSchemasFromRedis("ApiUser", sp => sp.GetRequiredService<ConnectionMultiplexer>());
+                .AddRemoteSchema("users")
+                .InitializeOnStartup();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
